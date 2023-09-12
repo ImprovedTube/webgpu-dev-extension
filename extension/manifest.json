@@ -1,0 +1,44 @@
+{
+  "name": "WebGPU Dev Extension",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Provide some features helpful for WebGPU Development",
+  "default_locale": "en",
+  "minimum_chrome_version": "113",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg/wAu86aayfkDEvVAGgdtl8FS2/axn1JqdDl9awFDUdSLZrCNJ/7vMJBEUp3IpgzBMF+qFH9UZFQJIuyo2vRHnmIXDMVXEfYLmIJ9WfMYQnu8sUvcTilj7zCzaWSyo1/VqGeahsRX18VZBaMyOc4vauSojZFi66ZkR+dd9JoPhbxFFAMrcZkYeoIL27+ofKRy01gCBN/p3kQtowfvQtxGA+5irSqspXPtFIeTY20ZBhGaYR1KXu9wwa9ghtuQPf00Gy8+FyDzFwemawJ3KjlATokTjqEw9Z8ZM1kB6sS0q50xSJUhlbQ+/FMFN0owm7K5UHTSXGOALS8YPnHASeP3wIDAQAB",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "scripts/gpu-injected.js",
+        "scripts/webgpu_recorder.js",
+        "scripts/webgpu-compat-validation.js"
+       ],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/gpu-content-script.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "/images/icon-16.png",
+      "32":  "/images/icon-32.png",
+      "48":  "/images/icon-48.png",
+      "128": "/images/icon-128.png",
+      "512": "/images/icon-512.png"
+    }
+  },
+  "icons": {
+    "16":  "/images/icon-16.png",
+    "32":  "/images/icon-32.png",
+    "48":  "/images/icon-48.png",
+    "128": "/images/icon-128.png",
+    "512": "/images/icon-512.png"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "WebGPU Dev Extension",
+  "description": "Provide some features helpful for WebGPU Development",
+  "version": "0.0.0.1",
+  "minimum_chrome_version": "113",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg/wAu86aayfkDEvVAGgdtl8FS2/axn1JqdDl9awFDUdSLZrCNJ/7vMJBEUp3IpgzBMF+qFH9UZFQJIuyo2vRHnmIXDMVXEfYLmIJ9WfMYQnu8sUvcTilj7zCzaWSyo1/VqGeahsRX18VZBaMyOc4vauSojZFi66ZkR+dd9JoPhbxFFAMrcZkYeoIL27+ofKRy01gCBN/p3kQtowfvQtxGA+5irSqspXPtFIeTY20ZBhGaYR1KXu9wwa9ghtuQPf00Gy8+FyDzFwemawJ3KjlATokTjqEw9Z8ZM1kB6sS0q50xSJUhlbQ+/FMFN0owm7K5UHTSXGOALS8YPnHASeP3wIDAQAB",
+  "permissions" : [
+      "tabs",
+      "activeTab",
+      "storage",
+      "scripting",
+      "debugger"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "*" ],
+      "matches": [ "*://*/*" ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "/images/icon-16.png",
+      "32":  "/images/icon-32.png",
+      "48":  "/images/icon-48.png",
+      "128": "/images/icon-128.png",
+      "512": "/images/icon-512.png"
+    }
+  },
+  "icons": {
+    "16":  "/images/icon-16.png",
+    "32":  "/images/icon-32.png",
+    "48":  "/images/icon-48.png",
+    "128": "/images/icon-128.png",
+    "512": "/images/icon-512.png"
+  }
+ }

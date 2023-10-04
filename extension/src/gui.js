@@ -185,6 +185,36 @@ class MultiSelect extends Control {
   }
 }
 
+class Select extends Control {
+  constructor(obj, prop, options) {
+    super(obj, prop);
+    const id = getId();
+    const that = this;
+    this.options = options.slice();
+    this.selectElem = el('select', {
+      id,
+      onInput: () => {
+        const v = options[this.selectElem.selectedIndex];
+        obj[prop] = Array.isArray(v) ? v[0] : v;
+        that.changed();
+      },
+    }, options.map(v => {
+      const [value, label] = Array.isArray(v) ? v : [v, v];
+      return el('option', {selected: value === obj[prop], textContent: label});
+    })),
+
+    this.labelElem = el('label', {/*for: id,*/ textContent: prop});
+    this.elem.classList.add('select');
+    this.elem.appendChild(this.labelElem);
+    this.elem.appendChild(this.selectElem);
+  }
+  set(v) {
+    super.set(v);
+    const ndx = Math.max(0, this.options.findIndex(vv => v === Array.isArray(v) ? v[0] : v));
+    this.selectElem.selectedIndex = ndx;
+  }
+}
+
 function createControl(obj, prop, a1, a2, a3) {
   const v = obj[prop];
   if (Array.isArray(v)) {
@@ -211,7 +241,11 @@ function createControl(obj, prop, a1, a2, a3) {
       return new Slider(obj, prop, min, max, step)
     }
   } else if (typeof v === 'string') {
-    return new Text(obj, prop);
+    if (Array.isArray(a1)) {
+      return new Select(obj, prop, a1);
+    } else {
+      return new Text(obj, prop);
+    }
   } else {
     throw new Error('unhandled type');
   }

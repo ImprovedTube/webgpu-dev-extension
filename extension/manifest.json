@@ -9,9 +9,13 @@
   "web_accessible_resources": [
     {
       "resources": [
+        "scripts/dump-shaders.js",
+        "scripts/force-compatibility-mode.js",
+        "scripts/force-high-performance.js",
+        "scripts/force-low-power.js",
         "scripts/gpu-injected.js",
-        "scripts/webgpu_recorder.js",
-        "scripts/webgpu-compat-validation.js"
+        "scripts/webgpu-compat-validation.js",
+        "scripts/webgpu_recorder.js"
        ],
       "matches": ["*://*/*"]
     }

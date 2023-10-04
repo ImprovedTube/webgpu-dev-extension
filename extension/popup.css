@@ -72,3 +72,8 @@ fieldset {
 .slider>div {
   min-width: 3em;
 }
+.select {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+}

@@ -23,7 +23,7 @@ if (!settings) {
   settings = {};
 }
 
-console.log('settings:', settings);
+console.log('webgpu-dev-extension settings:', settings);
 
 function sendMessage(cmd, data) {
   window.browser.runtime.sendMessage({cmd, data});
@@ -39,7 +39,7 @@ const commands = {
 };
 
 window.browser.runtime.onMessage.addListener((m, sender, sendResponse) => {
-  console.log('onMessage', m);
+  // console.log('onMessage', m);
   const fn = commands[m.cmd];
   if (!fn) {
     throw new Error(`unknown cmd: '${m.cmd}'`);
@@ -57,4 +57,18 @@ if (settings.compat) {
   injectScript(chrome.runtime.getURL('scripts/webgpu-compat-validation.js'));
 }
 
+switch (settings.forceMode) {
+  case 'low-power':
+    injectScript(chrome.runtime.getURL('scripts/force-low-power.js'));
+    break;
+  case 'high-performance':
+    injectScript(chrome.runtime.getURL('scripts/force-high-performance.js'));
+    break;
+  case 'compatibility-mode':
+    injectScript(chrome.runtime.getURL('scripts/force-compatibility-mode.js'));
+    break;
+}
 
+if (settings.dumpShaders) {
+  injectScript(chrome.runtime.getURL('scripts/dump-shaders.js'));
+}

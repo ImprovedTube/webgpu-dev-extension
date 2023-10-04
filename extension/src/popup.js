@@ -26,6 +26,8 @@ async function main() {
 
   gui.add(settings, 'capture').name('Capture');
   gui.add(settings, 'compat').name('Emulate Compat');
+  gui.add(settings, 'dumpShaders').name('Dump Shaders');
+  gui.add(settings, 'forceMode', ['none', 'low-power', 'high-performance', 'compatibility-mode']).name('Force Mode');
 }
 
 main();

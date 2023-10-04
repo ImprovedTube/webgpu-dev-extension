@@ -5,6 +5,7 @@ if (navigator.gpu) {
       if (adapter) {
         try {
           const info = await adapter.requestAdapterInfo();
+          console.log('adapter:', adapter);
           console.log('adapterInfo:', info);
         } catch (e) {
           console.log("ERR:", e);

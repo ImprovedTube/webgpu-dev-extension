@@ -24,6 +24,7 @@ async function main() {
   const gui = new GUI().onChange(saveSettings);
   controlsElem.appendChild(gui.elem);
 
+  gui.add(settings, 'showAdapterInfo').name('Show Adapter Info');
   gui.add(settings, 'capture').name('Capture');
   gui.add(settings, 'compat').name('Emulate Compat');
   gui.add(settings, 'dumpShaders').name('Dump Shaders');

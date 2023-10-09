@@ -14,6 +14,7 @@
         "scripts/force-high-performance.js",
         "scripts/force-low-power.js",
         "scripts/gpu-injected.js",
+        "scripts/show-adapter-info.js",
         "scripts/webgpu-compat-validation.js",
         "scripts/webgpu_recorder.js"
        ],

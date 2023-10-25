@@ -1,7 +1,6 @@
 if (typeof GPUAdapter !== 'undefined') {
   let maxActiveDevices = 0;
   let allDevices = [];
-window.ad = allDevices;
 
   // 
   function updateDevices() {
@@ -10,7 +9,7 @@ window.ad = allDevices;
     allDevices = allDevices.filter(v => !!v.deref());
     const numGarbageCollectedDevices = countBefore - allDevices.length;
     if (numGarbageCollectedDevices > 0) {
-      console.log('num garbage collected devices:', numGarbageCollectedDevices);
+      console.info('num garbage collected devices:', numGarbageCollectedDevices);
     }
 
     console.info('num active WebGPU devices', allDevices.length);

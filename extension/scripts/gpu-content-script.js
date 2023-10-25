@@ -48,6 +48,10 @@ window.browser.runtime.onMessage.addListener((m, sender, sendResponse) => {
   }
 });
 
+if (settings.countActiveDevices) {
+  injectScript(chrome.runtime.getURL('scripts/count-devices.js'));
+}
+
 if (settings.capture) {
   injectScript(chrome.runtime.getURL('scripts/webgpu_recorder.js'));
   injectScript(chrome.runtime.getURL('scripts/gpu-injected.js'));

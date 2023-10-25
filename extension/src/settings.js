@@ -3,6 +3,7 @@ const defaultSettings = {
   compat: false,
   dumpShaders: false,
   showAdapterInfo: false,
+  countActiveDevices: false,
   forceMode: 'none',
 };
 

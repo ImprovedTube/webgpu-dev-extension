@@ -4,6 +4,7 @@ const defaultSettings = {
   dumpShaders: false,
   showAdapterInfo: false,
   showErrors: false,
+  addViewDescriptionToView: false,
   countActiveDevices: false,
   forceMode: 'none',
 };

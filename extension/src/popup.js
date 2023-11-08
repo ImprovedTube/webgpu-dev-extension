@@ -26,6 +26,7 @@ async function main() {
 
   gui.add(settings, 'showAdapterInfo').name('Show Adapter Info');
   gui.add(settings, 'showErrors').name('Show Errors');
+  gui.add(settings, 'addViewDescriptionToView').name('Add View Description to View');
   gui.add(settings, 'capture').name('Capture');
   gui.add(settings, 'compat').name('Emulate Compat');
   gui.add(settings, 'countActiveDevices').name('Count Active Devices');

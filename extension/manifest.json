@@ -12,6 +12,7 @@
   "web_accessible_resources": [
     {
       "resources": [
+        "scripts/add-view-description-to-view.js",
         "scripts/count-devices.js",
         "scripts/dump-shaders.js",
         "scripts/force-compatibility-mode.js",
@@ -19,7 +20,7 @@
         "scripts/force-low-power.js",
         "scripts/gpu-injected.js",
         "scripts/show-adapter-info.js",
-        "scripts/show-all-errors.js",
+        "scripts/show-errors.js",
         "scripts/webgpu-compat-validation.js",
         "scripts/webgpu_recorder.js"
        ],

@@ -77,6 +77,10 @@ if (settings.dumpShaders) {
   injectScript(chrome.runtime.getURL('scripts/dump-shaders.js'));
 }
 
+if (settings.showErrors) {
+  injectScript(chrome.runtime.getURL('scripts/show-all-errors.js'));
+}
+
 if (settings.showAdapterInfo) {
   injectScript(chrome.runtime.getURL('scripts/show-adapter-info.js'));
 }

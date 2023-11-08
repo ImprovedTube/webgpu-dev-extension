@@ -25,6 +25,7 @@ async function main() {
   controlsElem.appendChild(gui.elem);
 
   gui.add(settings, 'showAdapterInfo').name('Show Adapter Info');
+  gui.add(settings, 'showErrors').name('Show Errors');
   gui.add(settings, 'capture').name('Capture');
   gui.add(settings, 'compat').name('Emulate Compat');
   gui.add(settings, 'countActiveDevices').name('Count Active Devices');
